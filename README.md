@@ -9,17 +9,17 @@
 
 - ch1,2,4의 경우는 개별적으로 학습합니다.
 
-| 정리 자료 
-|:-----
-|[03장. 저장소와 검색](https://github.com/Learning-Is-Vital-In-Development/23-11-DesignDataIntensiveApplications/tree/main/ch03)
-|[05장. 복제](https://github.com/Learning-Is-Vital-In-Development/23-11-DesignDataIntensiveApplications/tree/main/ch05)
-|[06장. 파티셔닝](https://github.com/Learning-Is-Vital-In-Development/23-11-DesignDataIntensiveApplications/tree/main/ch06)
-|[07장. 트랜잭션](https://github.com/Learning-Is-Vital-In-Development/23-11-DesignDataIntensiveApplications/tree/main/ch07)
-|[08장. 분산 시스템의 골칫거리](https://github.com/Learning-Is-Vital-In-Development/23-11-DesignDataIntensiveApplications/tree/main/ch08)
-|[09장. 일관성과 합의](https://github.com/Learning-Is-Vital-In-Development/23-11-DesignDataIntensiveApplications/tree/main/ch09)
-|[10장. 일괄 처리](https://github.com/Learning-Is-Vital-In-Development/23-11-DesignDataIntensiveApplications/tree/main/ch10)
-|[11장. 스트림 처리](https://github.com/Learning-Is-Vital-In-Development/23-11-DesignDataIntensiveApplications/tree/main/ch11)
-|[12장. 데이터 시스템의 미래](https://github.com/Learning-Is-Vital-In-Development/23-11-DesignDataIntensiveApplications/tree/main/ch12)
+| 정리 자료 |
+|:-----|
+|[03장. 저장소와 검색](https://github.com/Learning-Is-Vital-In-Development/23-11-DesignDataIntensiveApplications/tree/main/ch03)|
+|[05장. 복제](https://github.com/Learning-Is-Vital-In-Development/23-11-DesignDataIntensiveApplications/tree/main/ch05)|
+|[06장. 파티셔닝](https://github.com/Learning-Is-Vital-In-Development/23-11-DesignDataIntensiveApplications/tree/main/ch06)|
+|[07장. 트랜잭션](https://github.com/Learning-Is-Vital-In-Development/23-11-DesignDataIntensiveApplications/tree/main/ch07)|
+|[08장. 분산 시스템의 골칫거리](https://github.com/Learning-Is-Vital-In-Development/23-11-DesignDataIntensiveApplications/tree/main/ch08)|
+|[09장. 일관성과 합의](https://github.com/Learning-Is-Vital-In-Development/23-11-DesignDataIntensiveApplications/tree/main/ch09)|
+|[10장. 일괄 처리](https://github.com/Learning-Is-Vital-In-Development/23-11-DesignDataIntensiveApplications/tree/main/ch10)|
+|[11장. 스트림 처리](https://github.com/Learning-Is-Vital-In-Development/23-11-DesignDataIntensiveApplications/tree/main/ch11)|
+|[12장. 데이터 시스템의 미래](https://github.com/Learning-Is-Vital-In-Development/23-11-DesignDataIntensiveApplications/tree/main/ch12)|
 
 ## 진행방식
 
