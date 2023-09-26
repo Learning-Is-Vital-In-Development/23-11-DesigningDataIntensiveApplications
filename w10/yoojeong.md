@@ -88,4 +88,21 @@
 
 #### 문서 기준 보조 색인 파티셔닝(Partitioning Secondary Indexes by Document)
 
+![image](https://github.com/rachel5004/23-11-DesigningDataIntensiveApplications/assets/75432228/812b11f3-9701-4191-b759-3954334c4681)
+
+
+- 보조 색인을 만들면 데이터베이스가 color:red 색인 항목에 해당하는 문서 ID를 매핑한다.
+- 파티션별로 자신의 보조 색인을 유지하는 방식으로 각 파티션이 완전히 독립적으로 동작한다. (`지역 색인(local index)`)
+- 모든 파티션으로 질의를 보내서 얻은 결과를 모두 모아야 한다. (`스캐터/개더(scatter/gather)`)
+  - 보조 색인을 써서 읽는 질의는 큰 비용(꼬리 지연 시간 증폭(tail latency amplification))이 들 수 있다.
+- 데이터베이스 벤더들은 대부분 보조 색인 질의가 단일 파티션에서만 실행되도록 파티셔닝 방식을 설계하기를 권장하지만 (단일 질의에서 여러 보조 색인을 사용할 때 등) 항상 가능하지는 않다.
+
+#### 용어 기준 보조 색인 파티셔닝(Partitioning Secondary Indexes by Term)
+
+![image](https://github.com/rachel5004/23-11-DesigningDataIntensiveApplications/assets/75432228/6ee64d9c-7de7-4d55-959b-1cf00c15c440)
+
+- 각 파티션이 모든 파티션의 데이터를 담당하는 전역 색인(global index)을 공유한다.
+  - 이 때는 전역 색인도 파티셔닝하여 한 노드에 병목이 되지 않게 한다.
+- 모든 파티션의 빨간색 자동차 정보는 색인에서 color: red 항목에 저장되지만 color 색인이 a~r까지의 글자로 시작하는 색깔은 파티션 0에, s부터 z까지의 color는 파티션1에 저장된다.
+
 
