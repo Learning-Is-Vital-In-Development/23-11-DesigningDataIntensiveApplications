@@ -2,6 +2,8 @@ name: PR auto merge
 on:
   schedule:
     - cron: '0 0 * * 3' # 매주 수요일 0시(UTC) -> 매주 월요일 오전 9시(KST) 9시간 시차존재
+  workflow_dispatch:
+  
 jobs:
   automerge:
     runs-on: ubuntu-latest
@@ -11,4 +13,4 @@ jobs:
         env:
           MERGE_LABELS: "" # 모든 PR을 병합합니다.
           MERGE_METHOD: "squash" # PR을 스쿼시형태로 병합합니다.
-          GITHUB_TOKEN: "${{ secrets.GH_TOKEN }}"
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
