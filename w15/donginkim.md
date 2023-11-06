@@ -30,3 +30,50 @@
 
 - 공통적으로 사용하는 강한 일관성 모델 중 하나인 **선형성(linearizability)**을 살펴보고 장점과 단점을 검토
 - 분산 시스템에서 이벤트 순서화 문제, 특히 인과성과 전체 순서화와 관련된 문제를 검토
+
+## 선형성
+
+데이터베이스가 하나의 복제본만 있다는 개념으로 클라이언트가 똑같은 데이터를 보고 복제 지연을 걱정할 필요가 없도록 만들어주는 것이 선형성을 뒷받침 하는 아이디어이다. 이와 똑같은 개념이 아래와 같다.
+
+- 원자적 일관성(atomic consistency)
+- 강한 일관성(strong consistency)
+- 즉각 일관성(immediate consistency)
+- 외부 일관성(external consistency)
+
+선형성은 또한 클라이언트가 쓰기를 완료하자마자 볼 수 있어야하기 때문에 **최신성 보장(recency gurantee)**가 이뤄져야 한다.
+
+비선형 시스템
+![image](https://github.com/eastperson/23-11-DesigningDataIntensiveApplications/assets/66561524/dc556267-3f16-4972-a6a3-3576c20e8793)
+- Follwer2가 오래된 결과를 반환했다는 사실은 선형성 위반이다.
+
+### 시스템에 선형성을 부여하는 것은 무엇인가?
+
+시스템 데이터 복사본이 하나뿐인 것처럼 보이게 만듦
+
+선형성 데이터베이스는 동시에 같은 키 x를 읽고 쓰는 새 클라이언트를 보여준다.
+
+분산 시스템 분야에서 x는 **레지스터(register)**라고 불린다.
+![image](https://github.com/eastperson/23-11-DesigningDataIntensiveApplications/assets/66561524/c7343a95-edb8-431c-90bd-60fec45191c1)
+
+- read(x) ⇒ v는 클라이언트가 레지스터 x의 값을 읽기를 요청했고 데이터베이스가 값 v를 반환했다는 것을 의미
+- write(x, y) ⇒ r은 클라이언트가 레지스터 x의 값을 v로 설정하라고 요청했고 데이터베이스가 응답 r(ok일 수도 error 일 수도 있다)을 반환했다는 것을 의미
+
+write연산 앞뒤의 값은 명확하다. write 연산과 동시에 실행된 읽기 연산은 쓰기의 영향을 받을 수 있을수도 있고 안받을 수도 있다. 다만, 이는 선형성 시스템을 설명하기는 역부족이다. 쓰기가 진행되는 동안 오래된값과 새로운값이 바뀔 수 있기 때문이다.
+![image](https://github.com/eastperson/23-11-DesigningDataIntensiveApplications/assets/66561524/c3065d9c-de3c-4e65-a4ee-d0df3a8bda84)
+
+선형성 시스템은 쓰기연산이 완료되지 않더라도 값이 일관적이어야 한다. 즉, 0에서 1로 바뀌는 어떤 시점이 있어야 한다.
+![image](https://github.com/eastperson/23-11-DesigningDataIntensiveApplications/assets/66561524/3eadbb3d-ddce-4112-8d6d-ff1ac7ad025c)
+
+- cas(x, v(old), v(new)) ⇒ r은 클라이언트가 원자적 compare-and-set 연산을 요청했다는 뜻이다. 레지스터 x의 현재값이 v(old)와 같으면 원자적으로 v(new)로 설정돼야 한다. X ≠ v(old)라면 이 연산은 레지스터를 그대로 두고 오류를 반환해야 한다. r은 데이터베이스의 응답이다(ok나 error).
+
+> 선형성 대 직렬성
+> 
+> **선형성**
+> 레지스터에 실행되는 읽기와 쓰기에 대한 최신성 보장. 연산을 트랜잭션으로 묶지 않아 충돌 구체화 같은 부가적인 수단을 사용하지 않으면 쓰기 스큐 같은 문제를 막지 못한다.
+> 
+> **직렬성**
+> 트랜잭션들이 어떤 순서에 따라 실행되는 것처럼 동작하도록 보장해준다. 그 순서가 트랜잭션들이 실제로 실행되는 순서와 달라도 상관없다.
+> 
+> 데이터베이스가 직렬성과 선형성을 모두 제공하려고 하는 경우 이를 엄격한 직렬성(strict serializability)이나 강한 단일 복사본 직렬성(strong one-copy serializability, strong-1SR)이라고 한다. 2단계 잠급이나 실제 직렬 실행을 기반으로 한 직렬성 구현이 보통 선형적이다. 하지만 직렬성 스냅숏 격리는 선형적이지 않다. 일관된 스냅숏의 요점은 스냅숏에 스냅숏보다 나중에 실행된 쓰기를 포함하지 않는다는 의미여서 스냅숏에서 읽으면 선형적이지 않다.
+
+
