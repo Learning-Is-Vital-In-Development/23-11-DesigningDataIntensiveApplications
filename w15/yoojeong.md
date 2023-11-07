@@ -13,8 +13,8 @@ DB에 쓰기를 멈추고 불특정 시간 동안 기다리면 결국 모든 읽
 
 > 시스템에 데이터 복사본이 하나만 있고 그 데이터를 대상으로 수행하는 모든 연산을 원자적인 것처럼 보이게 하는 것
 
-![image](https://github.com/rachel5004/23-11-DesigningDataIntensiveApplications/assets/75432228/6361bb58-1d55-48c0-990e-17e06801507c)
 
+![image](https://github.com/rachel5004/23-11-DesigningDataIntensiveApplications/assets/75432228/8a34d823-5d68-45cd-a1a5-03906d48d917)
 
 - 비선형성 시스템의 예제
   - 앨리스에게 결과를 들은 후 새로고침했음에도 오래된 질의 결과를 반환받아 혼란스러운 밥
@@ -84,7 +84,9 @@ DB에 쓰기를 멈추고 불특정 시간 동안 기다리면 결국 모든 읽
 #### 선형성의 비용
 
 > 네트워크가 끊기면 각 데이터센터의 내부 네트워크는 동작하고 클라이언트들은 데이터센터에 접근할 수 있지만 데이터센터끼리는 서로 연결할 수 없다
-> ![image](https://github.com/rachel5004/23-11-DesigningDataIntensiveApplications/assets/75432228/050bd1ba-81e1-4f8f-b209-2347f4cebfc1)
+
+![image](https://github.com/rachel5004/23-11-DesigningDataIntensiveApplications/assets/75432228/a9c79efc-e092-431f-9e30-fe1d1bdf9228)
+
 
 
 - 다중 리더 데이터베이스를 사용하면 각 데이터센터는 계속 정상 동작하다, 네트워크 연결이 복구되면 복제 된다.
