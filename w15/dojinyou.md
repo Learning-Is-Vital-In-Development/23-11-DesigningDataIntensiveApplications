@@ -178,7 +178,7 @@
 
 인과성에 일관적인 일련 번호를 생성하는 간단한 방법은 **램포트 타임스탬프(Lamport Timestamp)**이다.
 
-![Untitled](![image](https://github.com/Learning-Is-Vital-In-Development/23-11-DesigningDataIntensiveApplications/assets/61923768/ab98c9ca-f127-4bd3-926a-4939eb9e22bd)
+![Untitled](https://github.com/Learning-Is-Vital-In-Development/23-11-DesigningDataIntensiveApplications/assets/61923768/ab98c9ca-f127-4bd3-926a-4939eb9e22bd)
 
 각 노드는 고유 식별자를 갖고 처리한 연산 개수를 카운트로 유지한다. 램포트 타임스탬프는 물리적 시계와 관련 없이 전체 순서화를 제공한다. 두 타임 스탬프가 있으면 카운터가 큰 것이 타임스탬프가 크다. 카운터 값이 같으면 노드 ID가 큰 것이 타임 스탬프가 크다.
 
