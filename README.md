@@ -27,9 +27,9 @@
 | [16주차(11.08 ~ 11.14): Ch09 일관성과 합의(분산 트랜잭션과 합의)](https://github.com/Learning-Is-Vital-In-Development/23-11-DesigningDataIntensiveApplications/tree/main/w16                            ) |
 | [17주차(11.15 ~ 11.21): Ch10 일괄처리(유닉스 도구로 일괄 처리하기, 맵리듀스와 분산 파일 시스템)](https://github.com/Learning-Is-Vital-In-Development/23-11-DesigningDataIntensiveApplications/tree/main/w17          ) |
 | [18주차(11.22 ~ 11.28): 자체 휴무](https://github.com/Learning-Is-Vital-In-Development/23-11-DesigningDataIntensiveApplications/tree/main/w18         ) |
-| [19주차(11.29 ~ 12.05): Ch10 일괄처리(맵리듀스를 넘어), CH11 스트림 처리(이벤트 스트림 전송) ](https://github.com/Learning-Is-Vital-In-Development/23-11-DesigningDataIntensiveApplications/tree/main/w19                    ) |
-| [20주차(12.06 ~ 12.12): 자체 휴무)](https://github.com/Learning-Is-Vital-In-Development/23-11-DesigningDataIntensiveApplications/tree/main/w20                ) |
-| [21주차(12.13 ~ 12.19): CH11 스트림 처리(데이터 베이스와 스트림, 스트림 처리)](https://github.com/Learning-Is-Vital-In-Development/23-11-DesigningDataIntensiveApplications/tree/main/w21                  ) |
+| [19주차(11.29 ~ 12.05): Ch10 일괄처리(맵리듀스를 넘어)](https://github.com/Learning-Is-Vital-In-Development/23-11-DesigningDataIntensiveApplications/tree/main/w19                    ) |
+| [20주차(12.06 ~ 12.12): 자체 휴무](https://github.com/Learning-Is-Vital-In-Development/23-11-DesigningDataIntensiveApplications/tree/main/w20                ) |
+| [21주차(12.13 ~ 12.19): CH11 스트림 처리(이벤트 스트림 전송, 데이터 베이스와 스트림, 스트림 처리)](https://github.com/Learning-Is-Vital-In-Development/23-11-DesigningDataIntensiveApplications/tree/main/w21                  ) |
 
 ## 진행방식
 
